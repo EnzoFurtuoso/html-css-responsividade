@@ -6,6 +6,14 @@
     position: relative;
 }
 
+.container__button:checked ~ .container__rotulo > .cabecalho__menu-hamburguer {
+    background-image: url("../imagens/Menu\ Aberto.svg");
+}
+
+.container__button:checked ~ .container__rotulo {
+    background: var(--blue-degrade);
+}
+
 .cabecalho__menu-hamburguer {
     width: 24px;
     height: 24px;
@@ -56,4 +64,104 @@
 
 .container__button {
     display: none;
+}
+
+.container__titulo {
+    display: none;
+}
+
+.opcoes {
+    display: none;
+}
+
+.container__texto{
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    
+    .container__titulo, .container__titulo-negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .container__titulo {
+        display: block;
+        font-weight: 400;
+    }
+
+    .container__titulo-negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes__item {
+        text-transform: uppercase;
+        padding: 0 1em;
+    }
+
+    .opcoes__link {
+        text-decoration: none;
+        color: var(--black);
+
+    }
+
+    .container__img-transparente {
+        display: none;
+    }
+
+    .cabecalho__menu-hamburguer {
+        display: none;
+    }
+
+    .opcoes__button:checked ~ .list-menu {
+        display: block;
+        width: auto;
+    }
+    .opcoes__button {
+        display: none;
+    }
+
+    .opcoes__button:checked ~.opcoes__rotulo > .opcoes__item {
+        background: var(--blue-degrade);
+        color: var(--white);
+    }
+
+    .opcoes__item {
+        padding: 1em 2em;
+    }
+
+    .list-menu__item:hover {
+        background: var(--blue-degrade);
+    }
+
+    .list-menu__item > .list-menu__link:hover {
+        -webkit-text-fill-color: var(--white);
+        text-decoration: none;
+
+    }
+}
+
+@media (min-width: 1728px) {
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--black);
+    }
+
+    .cabecalho {
+        padding: 0 2em;
+    }
+
+    .opcoes {
+        margin-right: auto;
+    }
+
+    .container__texto {
+        display: block;
+    }
 }
